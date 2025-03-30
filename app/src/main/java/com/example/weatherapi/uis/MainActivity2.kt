@@ -2,6 +2,7 @@ package com.example.weatherapi.uis
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,10 +25,33 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main2)
+        setupSearchView()
         fetchData()
     }
 
-    private fun fetchData(){
+    private fun setupSearchView() {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                if (!query.isNullOrEmpty()) {
+                    fetchWeatherData(query)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
+    }
+
+    private fun fetchData() {
+        fetchWeatherData("Toronto") // Default city
+    }
+
+    private fun fetchWeatherData(location: String) {
+        // Show loading indicator
+        Toast.makeText(this, "Fetching weather for $location...", Toast.LENGTH_SHORT).show()
+
         val retrofitBuilder = Retrofit.Builder()
             .baseUrl("https://yahoo-weather5.p.rapidapi.com/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -35,20 +59,17 @@ class MainActivity2 : AppCompatActivity() {
             .create(ApiInterface::class.java)
 
         val retrofitData = retrofitBuilder.getWeatherResponse(
-            "Toronto",
+            location,
             "json",
             "metric",
             "5f4f0939ddmsh37728f0e0b39793p13e9aajsn72c861191c8c",
             "yahoo-weather5.p.rapidapi.com"
         )
 
-        Log.d(TAG, "Making API request to Yahoo Weather")
+        Log.d(TAG, "Making API request to Yahoo Weather for $location")
 
         retrofitData.enqueue(object : Callback<WeatherResponse> {
-            override fun onResponse(
-                call: Call<WeatherResponse>,
-                response: Response<WeatherResponse>
-            ) {
+            override fun onResponse(call: Call<WeatherResponse>, response: Response<WeatherResponse>) {
                 if (response.isSuccessful) {
                     val weatherResponse = response.body()
                     Log.d(TAG, "Response successful: ${response.code()}")
