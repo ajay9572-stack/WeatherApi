@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -14,7 +13,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             tools:context=".uis.MainActivity2">
-
 
             <TextView
                 android:id="@+id/tect_city"
@@ -40,7 +38,7 @@
                 android:layout_height="120dp"
                 android:id="@+id/text_temp"
                 android:layout_marginHorizontal="30dp"
-                android:text="temputere"
+                android:text="temperature"
                 android:textSize="70dp"
                 android:textAlignment="center"
                 />
@@ -53,7 +51,6 @@
                 android:text="mausam"
                 android:textSize="20dp"
                 android:textAlignment="center"
-
                 />
 
             <LinearLayout
@@ -85,503 +82,501 @@
 
             </LinearLayout>
 
-
-
-
-            <SearchView
-                android:id="@+id/search_view"
+            <!-- Changed from SearchView to EditText -->
+            <EditText
+                android:id="@+id/et_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
                 android:background="@drawable/edit_text_backgrond"
                 android:layout_marginTop="20dp"
-                android:queryHint="Search city..."/>
+                android:padding="12dp"
+                android:hint="Search city..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginHorizontal="28dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="day"
+                    android:id="@+id/day1"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="day"
+                    android:id="@+id/day2"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="day"
+                    android:id="@+id/day3"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="day"
+                    android:id="@+id/day4"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="day"
+                    android:id="@+id/day5"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="day"
+                    android:id="@+id/day6"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="day"
+                    android:id="@+id/day7"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
 
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginHorizontal="28dp"
-                    android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="tem"
+                    android:id="@+id/tem1"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="tem"
+                    android:id="@+id/tem2"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="tem"
+                    android:id="@+id/tem3"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="tem"
+                    android:id="@+id/tem4"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="tem"
+                    android:id="@+id/tem5"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="tem"
+                    android:id="@+id/tem6"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text="tem"
+                    android:id="@+id/tem7"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <!-- Rest of the XML remains the same, just adding "°C" in text fields will be handled by the Kotlin code -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="180dp"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="10dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#99101623">
+
+
                     <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="5dp"
-                        android:text="day"
-                        android:id="@+id/day1"
-                        android:textSize="20dp"
-                        android:textAlignment="center"
-                        />
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="wind"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:id="@+id/text_wind"
+                        android:textSize="30dp"/>
 
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="day"
-                        android:id="@+id/day2"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="day"
-                        android:id="@+id/day3"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="day"
-                        android:id="@+id/day4"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="day"
-                        android:id="@+id/day5"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="day"
-                        android:id="@+id/day6"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="day"
-                        android:id="@+id/day7"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="28dp"
-                    android:layout_marginTop="30dp"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="5dp"
-                        android:text="tem"
-                        android:id="@+id/tem1"
-                        android:textSize="20dp"
-                        android:textAlignment="center"
-                        />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="tem"
-                        android:id="@+id/tem2"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="tem"
-                        android:id="@+id/tem3"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="tem"
-                        android:id="@+id/tem4"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="tem"
-                        android:id="@+id/tem5"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="tem"
-                        android:id="@+id/tem6"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:text="tem"
-                        android:id="@+id/tem7"
-                        android:textAlignment="center"
-                        android:textSize="20dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="150dp"
-                        android:layout_height="180dp"
-                        android:layout_marginVertical="5dp"
-                        android:layout_marginHorizontal="10dp"
-                        app:cardCornerRadius="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#99101623">
-
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:text="wind"
+                            android:text="direction :"
                             android:gravity="center"
                             android:textColor="@color/white"
-                            android:id="@+id/text_wind"
-                            android:textSize="30dp"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="50dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="direction :"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_direction"
-                                android:textSize="20dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="degree"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_degree"
-                                android:textSize="25dp"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="100dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="speed :"
-                                android:layout_margin="10dp"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:id="@+id/text_speed"
-                                android:textSize="20dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="m/s"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:id="@+id/text_mpers"
-                                android:layout_margin="10dp"
-                                android:textSize="25dp"/>
-
-                        </LinearLayout>
-
-
-
-                    </androidx.cardview.widget.CardView>
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="150dp"
-                        android:layout_height="180dp"
-                        android:layout_marginHorizontal="10dp"
-                        app:cardCornerRadius="10dp"
-                        android:layout_weight="1"
-                        android:layout_marginVertical="5dp"
-                        android:backgroundTint="#99101623">
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_direction"
+                            android:textSize="20dp"/>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:text="atmosphere"
+                            android:text="degree"
                             android:gravity="center"
                             android:textColor="@color/white"
-                            android:id="@+id/text_atmosphere"
-                            android:textSize="30dp"/>
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_degree"
+                            android:textSize="25dp"/>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp"
-                            android:layout_marginTop="40dp"
-                            android:orientation="horizontal">
+                    </LinearLayout>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="humidity :"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_humidity"
-                                android:textSize="20dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="%%%"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_percentage"
-                                android:textSize="25dp"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="80dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/text_visibility"
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:layout_margin="10dp"
-                                android:gravity="center"
-                                android:text="visiblity :"
-                                android:textColor="@color/white"
-                                android:textSize="20dp" />
-
-                            <TextView
-                                android:id="@+id/text_number"
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:layout_margin="10dp"
-                                android:gravity="center"
-                                android:text="number"
-                                android:textColor="@color/white"
-                                android:textSize="25dp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="120dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="pressure :"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_pressure"
-                                android:textSize="20dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="mesure"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_measure"
-                                android:textSize="25dp"/>
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="150dp"
-                        android:layout_height="180dp"
-                        android:layout_marginVertical="5dp"
-                        android:layout_marginHorizontal="10dp"
-                        app:cardCornerRadius="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#99101623">
-
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="100dp"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:text="astronomy"
+                            android:text="speed :"
+                            android:layout_margin="10dp"
                             android:gravity="center"
                             android:textColor="@color/white"
-                            android:id="@+id/text_astronomy"
-                            android:textSize="30dp"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="50dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="sunrise :"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_sunrise"
-                                android:textSize="20dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="subah"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_subah"
-                                android:textSize="25dp"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="100dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="sunset :"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_sunset"
-                                android:textSize="20dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="sam"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_sam"
-                                android:textSize="25dp"/>
-
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="150dp"
-                        android:layout_height="180dp"
-                        android:layout_marginHorizontal="10dp"
-                        app:cardCornerRadius="10dp"
-                        android:layout_weight="1"
-                        android:layout_marginVertical="5dp"
-                        android:backgroundTint="#99101623">
-
+                            android:id="@+id/text_speed"
+                            android:textSize="20dp"/>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:text="condition"
+                            android:text="m/s"
                             android:gravity="center"
                             android:textColor="@color/white"
-                            android:id="@+id/text_condition"
-                            android:textSize="30dp"/>
+                            android:id="@+id/text_mpers"
+                            android:layout_margin="10dp"
+                            android:textSize="25dp"/>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="50dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="temp. :"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_temperature"
-                                android:textSize="20dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="celcious"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_celcious"
-                                android:textSize="25dp"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="100dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="text :"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_text"
-                                android:textSize="20dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="haze"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_margin="10dp"
-                                android:id="@+id/text_haze"
-                                android:textSize="25dp"/>
-
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
+                    </LinearLayout>
 
 
 
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="180dp"
+                    android:layout_marginHorizontal="10dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginVertical="5dp"
+                    android:backgroundTint="#99101623">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="atmosphere"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:id="@+id/text_atmosphere"
+                        android:textSize="30dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="40dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="humidity :"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_humidity"
+                            android:textSize="20dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="%%%"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_percentage"
+                            android:textSize="25dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="80dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/text_visibility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:text="visiblity :"
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/text_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:text="number"
+                            android:textColor="@color/white"
+                            android:textSize="25dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="120dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="pressure :"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_pressure"
+                            android:textSize="20dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="mesure"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_measure"
+                            android:textSize="25dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="180dp"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="10dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#99101623">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="astronomy"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:id="@+id/text_astronomy"
+                        android:textSize="30dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="sunrise :"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_sunrise"
+                            android:textSize="20dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="subah"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_subah"
+                            android:textSize="25dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="100dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="sunset :"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_sunset"
+                            android:textSize="20dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="sam"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_sam"
+                            android:textSize="25dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="180dp"
+                    android:layout_marginHorizontal="10dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginVertical="5dp"
+                    android:backgroundTint="#99101623">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="condition"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:id="@+id/text_condition"
+                        android:textSize="30dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="temp. :"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_temperature"
+                            android:textSize="20dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="celcious"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_celcious"
+                            android:textSize="25dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="100dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="text :"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_text"
+                            android:textSize="20dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="haze"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:id="@+id/text_haze"
+                            android:textSize="25dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
         </LinearLayout>
-</ScrollView>
+    </ScrollView>
 </layout>

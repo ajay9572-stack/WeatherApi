@@ -2,7 +2,10 @@ package com.example.weatherapi.uis
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.SearchView
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,27 +28,28 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main2)
-        setupSearchView()
+        setupSearchEditText()
         fetchData()
     }
 
-    private fun setupSearchView() {
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                if (!query.isNullOrEmpty()) {
+    private fun setupSearchEditText() {
+        binding.etSearch.setOnEditorActionListener { _, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+                (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN)
+            ) {
+                val query = binding.etSearch.text.toString()
+                if (query.isNotEmpty()) {
                     fetchWeatherData(query)
                 }
-                return true
+                return@setOnEditorActionListener true
             }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return false
-            }
-        })
+            return@setOnEditorActionListener false
+        }
     }
 
     private fun fetchData() {
-        fetchWeatherData("Toronto") // Default city
+        fetchWeatherData("" +
+                "Kolkata") // Default city
     }
 
     private fun fetchWeatherData(location: String) {
@@ -61,7 +65,7 @@ class MainActivity2 : AppCompatActivity() {
         val retrofitData = retrofitBuilder.getWeatherResponse(
             location,
             "json",
-            "metric",
+            "c", // Changed from "metric" to "c" for Celsius
             "5f4f0939ddmsh37728f0e0b39793p13e9aajsn72c861191c8c",
             "yahoo-weather5.p.rapidapi.com"
         )
@@ -112,15 +116,16 @@ class MainActivity2 : AppCompatActivity() {
         try {
             with(binding) {
                 // Update main weather information
-                textTemp.text = "${weatherResponse.currentObservation.condition.temperature}°"
+                // Now temperature is already in Celsius because of the "c" parameter
+                textTemp.text = "${weatherResponse.currentObservation.condition.temperature}°C"
                 textCountry.text = weatherResponse.location.country
                 textMausam.text = weatherResponse.currentObservation.condition.text
                 tectCity.text = weatherResponse.location.city
 
                 // Set high/low temperatures from the first forecast
                 if (weatherResponse.forecasts.isNotEmpty()) {
-                    textH.text = "H: ${weatherResponse.forecasts[0].high}°"
-                    textL.text = "L: ${weatherResponse.forecasts[0].low}°"
+                    textH.text = "H: ${weatherResponse.forecasts[0].high}°C"
+                    textL.text = "L: ${weatherResponse.forecasts[0].low}°C"
                 }
 
                 // Update wind information
@@ -137,7 +142,7 @@ class MainActivity2 : AppCompatActivity() {
                 textSam.text = weatherResponse.currentObservation.astronomy.sunset
 
                 // Update condition information
-                textCelcious.text = weatherResponse.currentObservation.condition.temperature.toString()
+                textCelcious.text = "${weatherResponse.currentObservation.condition.temperature}°C"
                 textHaze.text = weatherResponse.currentObservation.condition.text
 
                 // Update forecast days
@@ -146,7 +151,7 @@ class MainActivity2 : AppCompatActivity() {
 
                 weatherResponse.forecasts.take(7).forEachIndexed { index, forecast ->
                     days.getOrNull(index)?.text = forecast.day
-                    temps.getOrNull(index)?.text = "${forecast.high}°"
+                    temps.getOrNull(index)?.text = "${forecast.high}°C"
                 }
             }
 
