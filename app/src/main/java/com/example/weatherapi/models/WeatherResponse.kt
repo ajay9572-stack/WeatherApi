@@ -2,15 +2,13 @@ package com.example.weatherapi.models
 
 import java.io.Serializable
 import java.util.Date
+import com.google.gson.annotations.SerializedName
 
 data class WeatherResponse(
     val location: Location,
+    @SerializedName("current_observation")
     val currentObservation: CurrentObservation,
     val forecasts: List<Forecast>,
-    val wind: Wind,
-    val atmosphere: Atmosphere,
-    val astronomy: Astronomy,
-    val condition: Condition,
 ) : Serializable
 
 data class Location(
@@ -19,6 +17,7 @@ data class Location(
     val country: String,
     val lat: Double,
     val long: Double,
+    @SerializedName("timezone_id")
     val timezoneId: String
 ) : Serializable
 
@@ -46,35 +45,19 @@ data class Condition(
 ) : Serializable
 
 data class CurrentObservation(
-    val pubDate: Date,
+    @SerializedName("pubDate")
+    val pubDate: Long,
     val wind: Wind,
     val atmosphere: Atmosphere,
     val astronomy: Astronomy,
     val condition: Condition
-) : Serializable {
-    constructor(
-        pubDate: Long,
-        wind: Wind,
-        atmosphere: Atmosphere,
-        astronomy: Astronomy,
-        condition: Condition
-    ) : this(Date(pubDate * 1000), wind, atmosphere, astronomy, condition)
-}
+) : Serializable
 
 data class Forecast(
     val day: String,
-    val date: Date,
+    val date: Long,
     val high: Int,
     val low: Int,
     val text: String,
     val code: Int
-) : Serializable {
-    constructor(
-        day: String,
-        date: Long,
-        high: Int,
-        low: Int,
-        text: String,
-        code: Int
-    ) : this(day, Date(date * 1000), high, low, text, code)
-}
+) : Serializable
